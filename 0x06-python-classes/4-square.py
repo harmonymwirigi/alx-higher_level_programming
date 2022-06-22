@@ -29,22 +29,22 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = size
-
-    def area(self):
-        """Calculates the area of the square
-
+    @property
+    def size(self):
+        """Change the value of size
         Returns:
-            The square area
+            None
         """
-        return self.__size ** 2
+        return self.__size
+
     @size.setter
     def size(self, value):
         """check errors and setter for size attribute
         Args:
-            value: Value to checking errors
+            Value to checking errors
         Raises:
-            TypeError: Exception if size is not an integer
-            ValueError: Exception if size is less than 0
+            TyperError: Exception if size is not an integer
+            ValueError: Exception if size is less than o
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
@@ -52,10 +52,10 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = value
-    @property
-    def size(self):
-        """Change the value of size
-        Returns: 
-            None
-        """"
-        return self.__size
+    def area(self):
+        """Calculates the area of the square
+
+        Returns:
+            The square area
+        """
+        return self.__size ** 2
