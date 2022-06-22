@@ -37,15 +37,25 @@ class Square:
             The square area
         """
         return self.__size ** 2
-    def size(self):
-        """Retrives the size
-        Returns:
-           The size of the square
-        """
-        return self.__size
+    @size.setter
     def size(self, value):
+        """check errors and setter for size attribute
+        Args:
+            value: Value to checking errors
+        Raises:
+            TypeError: Exception if size is not an integer
+            ValueError: Exception if size is less than 0
+        """
+        if type(value) is not int:
+            raise TypeError("size must be an integer")
+        elif value < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = value
+    @property
+    def size(self):
         """Change the value of size
         Returns: 
             None
         """"
-        self.__size = value
+        return self.__size
