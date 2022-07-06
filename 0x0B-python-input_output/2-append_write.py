@@ -10,6 +10,8 @@ Args:
 Return: the number of characters added
 """
 def append_write(filename="", text=""):
+    """ the function should create file if it does not exist 
+    use of with to ensure the file is closed after user"""
     with open(filename, "a+", encoding = "utf-8") as f:
         f.write(text)
     return len(text)
